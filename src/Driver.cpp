@@ -25,6 +25,43 @@ int main(int argc, char* argv[]){
 	//return how much gold after addition
 	cout << myPirate.getPirateName() << ", you now have " << myPirate.getGold() << " gold!" << endl;
 
+	//ask if they want to change their name
+	cout << "Is your name really Tina? Would you like to change it?"<<endl;
+	string answer;
+	cin>> answer;
+
+	//if for answer
+	if(answer == "yes" || answer == "Yes" || answer == "YAR"){
+		cout << endl << "What would you like your name to be?"<<endl;
+		string name;
+		cin >> name;
+		myPirate.setName(name);
+		cout << "Your name is now " << myPirate.getPirateName();
+	}
+
+	//while loop set up to add more gold
+	cout << "Would you like to add more gold?"<<endl;
+	cin >> answer;
+	int counter=0;
+
+	//while loop
+	cout << "counter before while loop: " << counter << endl;
+	while(answer == "Yes" || answer == "YAR" || answer == "yes"){
+		cout << "How much gold would you like to add?"<<endl;
+		cin >> gold;
+		myPirate.addGold(gold);
+		cout << myPirate.getPirateName() << ", you now have " << myPirate.getGold() << " gold!" << endl;
+		cout << "Would you like to add even more gold?"<<endl;
+		cin >> answer;
+
+		if(answer!="Yes" || answer!="yes" || answer !="YAR"){
+			cout<< "last round of while loop counter: " << counter << endl;
+		}
+		counter++;
+	}
+	cout << "Counter after while loop: " << counter << endl;
+
+
 	return 0;
 }
 
