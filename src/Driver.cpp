@@ -61,6 +61,23 @@ int main(int argc, char* argv[]){
 	}
 	cout << "Counter after while loop: " << counter << endl;
 
+	//for loop demo
+	cout << "Guess what!" << endl;
+	cin << answer;
+	cout << "I understand how for loops work!" << endl;
+
+	counter = 0;
+	cout << "counter pre for loop: " << counter;
+	for(counter = 0; counter <10; counter++){
+		cout << counter;
+		if(counter == 9){
+			cout << "Last round of loop counter: " << counter;
+		}
+	}
+	cout << "Counter after for loop ends: " << counter;
+
+	cout << "goodbye";
+
 
 	return 0;
 }
