@@ -11,10 +11,6 @@
 #include <iostream>
 
 Pirate::Pirate() { // @suppress("Class members should be properly initialized")
-	cout << "Pirate created";
-	string pirateName;
-	int age = 0;
-	int gold = 0;
 }
 
 
@@ -47,4 +43,16 @@ void Pirate::setGold(int goldIn){
 //adds gold to current supply. I DID MATH
 void Pirate::addGold(int goldToAdd){
 	gold = gold + goldToAdd;
+}
+string Pirate::createNewParrot(){
+	string parrotName;
+	cin >> parrotName;
+	return(parrotName);
+}
+void Pirate::setParrotName(string name){
+	string parrotName = name;
+}
+string Pirate::getParrotName(){
+	cout << "get parrot name: " << parrotName << endl;
+	return parrotName;
 }

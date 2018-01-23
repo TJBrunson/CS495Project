@@ -22,10 +22,14 @@ class Pirate {
 		void setAge(int ageIn);
 		void setGold(int goldIn);
 		void addGold (int goldToAdd);
+		string createNewParrot();
+		void setParrotName(string name);
+		string getParrotName();
 	private:
 		string pirateName;
 		int age;
 		int gold;
+		string parrotName;
 
 };
 
