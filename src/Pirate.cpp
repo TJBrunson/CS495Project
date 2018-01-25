@@ -8,10 +8,9 @@
 #include "../src/Pirate.h"
 
 #include <cmath>
-#include <iostream>
+
 
 Pirate::Pirate(string name, int agein, int goldin) { // @suppress("Class members should be properly initialized")
-	cout << "Pirate created";
 	pirateName = name;
 	int age = agein;
 	int gold = goldin;
@@ -43,8 +42,7 @@ void Pirate::setAge(int ageIn){
 void Pirate::setGold(int goldIn){
 	gold = goldIn;
 }
-
-//adds gold to current supply. I DID MATH
+//adds gold to current supply
 void Pirate::addGold(int goldToAdd){
 	gold = gold + goldToAdd;
 }
