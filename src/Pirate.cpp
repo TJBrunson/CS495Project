@@ -8,6 +8,7 @@
 #include "../src/Pirate.h"
 
 #include <cmath>
+#include <iostream>
 
 
 Pirate::Pirate() { // @suppress("Class members should be properly initialized")
