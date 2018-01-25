@@ -14,7 +14,7 @@ using namespace std;
 
 class Pirate {
 	public:
-		Pirate(string name, int age, int gold);
+		Pirate();
 		string getPirateName();
 		int getAge();
 		int getGold();
@@ -22,10 +22,14 @@ class Pirate {
 		void setAge(int ageIn);
 		void setGold(int goldIn);
 		void addGold (int goldToAdd);
+		void createNewParrot();
+		void setParrotName(string name);
+		string getParrotName();
 	private:
 		string pirateName;
 		int age;
 		int gold;
+		string parrotName;
 
 };
 

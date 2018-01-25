@@ -11,54 +11,69 @@
 
 int main(int argc, char* argv[]){
 
-	//declare pirate tina
-	Pirate myPirate("tina",21,1000);
-	cout << "Hello " << myPirate.getPirateName() << ", you are " << myPirate.getAge() << ", and have "
-			<< myPirate.getGold() << " gold." << endl;
+	//set up for array of pirates and creation in a for loop
+	cout << "How many Pirates do you want?" << endl;
+	int numberOfPirates;
+	cin >> numberOfPirates;
+	Pirate pirateArray[numberOfPirates];
+	for(int i=0; i<numberOfPirates; i++){
+		//variables for pirates
+		string name;
+		int pirateAge;
+		int pirateGold;
 
-	//ask how much gold to add
-	int gold;
-	cout << "How much gold do you want to add?" << endl;
-	cin >> gold;
-	myPirate.addGold(gold);
+		cout << "Enter pirate " << i+1 <<  " name: " << endl;
+		cin  >> name;
+		cout << "Enter pirate " << i+1 << " age: " << endl;
+		cin  >> pirateAge;
+		cout << "Enter pirate " << i+1 << " gold: " << endl;
+		cin  >> pirateGold;
 
-	//return how much gold after addition
-	cout << myPirate.getPirateName() << ", you now have " << myPirate.getGold() << " gold!" << endl;
+		//These are all pass by value
+		pirateArray[i].setName(name);
+		pirateArray[i].setAge(pirateAge);
+		pirateArray[i].setGold(pirateGold);
 
-	//ask if they want to change their name
-	cout << "Is your name really Tina? Would you like to change it?"<<endl;
-	string answer;
-	cin>> answer;
+		//pass by reference
+		cout << "Finally, name your parrot: " << endl;
+		pirateArray[i].createNewParrot();
 
-	//if for answer
-	if(answer == "yes" || answer == "Yes" || answer == "YAR"){
-		cout << endl << "What would you like your name to be?"<<endl;
+
+	}
+
+	//search for parrot of a pirate from pirateArray
+	string answer = "YES";
+	while(answer == "YES" || answer == "YAR" || answer == "Yes" || answer == "yes"){
+
+		//print all pirates
+		cout << "Here is a list of all of the pirates: " << endl;
+		for(int i=0; i<numberOfPirates; i++){
+			cout << pirateArray[i].getPirateName() << endl;
+		}
+
+		//ask which pirate to find parrot of
+		cout << "Which pirate's parrot would you like to find?" << endl;
 		string name;
 		cin >> name;
-		myPirate.setName(name);
-		cout << "Your name is now " << myPirate.getPirateName();
-	}
 
-	//while loop set up to add more gold
-	cout << "Would you like to add more gold?"<<endl;
-	cin >> answer;
-	int counter=0;
+		//find the parrot
+		for(int i=0; i<numberOfPirates; i++){
+			cout << i;
+			if(name == pirateArray[i].getPirateName()){
 
-	//while loop
-	cout << "counter before while loop: " << counter << endl;
-	while(answer == "Yes" || answer == "YAR" || answer == "yes"){
-		cout << "How much gold would you like to add?"<<endl;
-		cin >> gold;
-		myPirate.addGold(gold);
-		cout << myPirate.getPirateName() << ", you now have " << myPirate.getGold() << " gold!" << endl;
-		cout << "Would you like to add even more gold?"<<endl;
+				cout << name << "'s parrot is named " << pirateArray[i].getParrotName() << endl;
+				break;
+			}
+			else if(i == numberOfPirates-1){
+				cout << "That is not a name of a pirate!";
+			}
+		}
+
+		cout << "Would you like to know the name of another pirate's parrot?" << endl;
 		cin >> answer;
 
-		if(answer!="Yes" || answer!="yes" || answer !="YAR"){
-			cout<< "last round of while loop counter: " << counter << endl;
-		}
-		counter++;
 	}
+<<<<<<< HEAD
 	cout << "Counter after while loop: " << counter << endl;
 
 	//for loop demo
@@ -77,8 +92,10 @@ int main(int argc, char* argv[]){
 	cout << "Counter after for loop ends: " << counter;
 
 	cout << "goodbye";
+=======
+>>>>>>> ArrayBranch
 
 
-	return 0;
+return (0);
 }
 

@@ -10,10 +10,7 @@
 #include <cmath>
 
 
-Pirate::Pirate(string name, int agein, int goldin) { // @suppress("Class members should be properly initialized")
-	pirateName = name;
-	int age = agein;
-	int gold = goldin;
+Pirate::Pirate() { // @suppress("Class members should be properly initialized")
 }
 
 
@@ -45,4 +42,16 @@ void Pirate::setGold(int goldIn){
 //adds gold to current supply
 void Pirate::addGold(int goldToAdd){
 	gold = gold + goldToAdd;
+}
+void Pirate::createNewParrot(){
+	string name;
+	cin >> name;
+	parrotName = name;
+}
+void Pirate::setParrotName(string name){
+	parrotName = name;
+}
+string Pirate::getParrotName(){
+
+	return parrotName;
 }
