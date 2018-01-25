@@ -36,8 +36,7 @@ int main(int argc, char* argv[]){
 
 		//pass by reference
 		cout << "Finally, name your parrot: " << endl;
-		string parrot = pirateArray[i].createNewParrot();
-		pirateArray[i].setParrotName(parrot);
+		pirateArray[i].createNewParrot();
 
 
 	}

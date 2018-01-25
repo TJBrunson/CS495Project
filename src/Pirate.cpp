@@ -44,10 +44,10 @@ void Pirate::setGold(int goldIn){
 void Pirate::addGold(int goldToAdd){
 	gold = gold + goldToAdd;
 }
-string Pirate::createNewParrot(){
-	string parrotName;
-	cin >> parrotName;
-	return(parrotName);
+void Pirate::createNewParrot(){
+	string name;
+	cin >> name;
+	parrotName = name;
 }
 void Pirate::setParrotName(string name){
 	parrotName = name;
