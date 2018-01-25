@@ -58,6 +58,7 @@ int main(int argc, char* argv[]){
 
 		//find the parrot
 		for(int i=0; i<numberOfPirates; i++){
+			cout << i;
 			if(name == pirateArray[i].getPirateName()){
 
 				cout << name << "'s parrot is named " << pirateArray[i].getParrotName() << endl;
