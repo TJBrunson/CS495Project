@@ -53,13 +53,14 @@ int main(int argc, char* argv[]){
 		}
 
 		//ask which pirate to find parrot of
-		cout << "Which pirate would you like the name of?" << endl;
+		cout << "Which pirate's parrot would you like to find?" << endl;
 		string name;
 		cin >> name;
 
 		//find the parrot
 		for(int i=0; i<numberOfPirates; i++){
 			if(name == pirateArray[i].getPirateName()){
+
 				cout << name << "'s parrot is named " << pirateArray[i].getParrotName() << endl;
 				break;
 			}
@@ -72,7 +73,6 @@ int main(int argc, char* argv[]){
 		cin >> answer;
 
 	}
-
 
 
 return (0);

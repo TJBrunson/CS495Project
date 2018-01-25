@@ -50,9 +50,9 @@ string Pirate::createNewParrot(){
 	return(parrotName);
 }
 void Pirate::setParrotName(string name){
-	string parrotName = name;
+	parrotName = name;
 }
 string Pirate::getParrotName(){
-	cout << "get parrot name: " << parrotName << endl;
+
 	return parrotName;
 }
