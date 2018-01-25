@@ -10,36 +10,6 @@
 #include "../src/Pirate.h"
 
 int main(int argc, char* argv[]){
-	//set up for array of pirates and creation in a for loop
-	cout << "Would you like to run my array program?" << endl;
-	string choice;
-	cin >> choice;
-	if(choice == "Yes" || choice == "yes" || choice == "Yar"){
-		cout << "How many Pirates do you want?" << endl;
-		int numberOfPirates;
-		cin >> numberOfPirates;
-		Pirate pirateArray[numberOfPirates];
-		for(int i=0; i<numberOfPirates; i++){
-			//variables for pirates
-			string name;
-			int pirateAge;
-			int pirateGold;
-
-			cout << "Enter pirate " << i <<  " name: " << endl;
-			cin  >> name;
-			cout << "Enter pirate " << i << " age: " << endl;
-			cin  >> pirateAge;
-			cout << "Enter pirate " << i << " gold: " << endl;
-			cin  >> pirateGold;
-			pirateArray[i].setName(name);
-			pirateArray[i].setAge(pirateAge);
-			pirateArray[i].setGold(pirateGold);
-
-			exit(0);
-
-		}
-	}
-
 
 	//declare pirate tina
 	Pirate myPirate("tina",21,1000);

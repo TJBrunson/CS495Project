@@ -10,11 +10,11 @@
 #include <cmath>
 #include <iostream>
 
-Pirate::Pirate() { // @suppress("Class members should be properly initialized")
+Pirate::Pirate(string name, int agein, int goldin) { // @suppress("Class members should be properly initialized")
 	cout << "Pirate created";
-	string pirateName;
-	int age = 0;
-	int gold = 0;
+	pirateName = name;
+	int age = agein;
+	int gold = goldin;
 }
 
 
