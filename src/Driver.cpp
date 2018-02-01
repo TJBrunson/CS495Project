@@ -8,6 +8,7 @@
 #include <iostream>
 
 #include "../src/Pirate.h"
+#include "../src/ParrotNamingClass.h"
 
 int main(int argc, char* argv[]){
 
@@ -34,12 +35,11 @@ int main(int argc, char* argv[]){
 		pirateArray[i].setAge(pirateAge);
 		pirateArray[i].setGold(pirateGold);
 
-		//pass by reference
-		cout << "Finally, name your parrot: " << endl;
-		pirateArray[i].createNewParrot();
-
-
 	}
+
+	//pass by reference
+	ParrotNamingClass namer;
+	namer.theNamer(pirateArray, numberOfPirates);
 
 	//search for parrot of a pirate from pirateArray
 	string answer = "YES";
@@ -58,7 +58,6 @@ int main(int argc, char* argv[]){
 
 		//find the parrot
 		for(int i=0; i<numberOfPirates; i++){
-			cout << i;
 			if(name == pirateArray[i].getPirateName()){
 
 				cout << name << "'s parrot is named " << pirateArray[i].getParrotName() << endl;
@@ -77,4 +76,3 @@ int main(int argc, char* argv[]){
 
 return (0);
 }
-
