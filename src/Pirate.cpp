@@ -11,7 +11,16 @@
 #include <iostream>
 
 
-Pirate::Pirate() { // @suppress("Class members should be properly initialized")
+
+Pirate::Pirate(string name, int age, int gold) {
+	//set name
+	setName(name);
+
+	//set age
+	setAge(age);
+
+	//set gold
+	setGold(gold);
 }
 
 

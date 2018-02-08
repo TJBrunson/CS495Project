@@ -12,65 +12,50 @@
 
 int main(int argc, char* argv[]){
 
-	//set up for array of pirates and creation in a for loop
-	cout << "How many Pirates do you want?" << endl;
-	int numberOfPirates;
-	cin >> numberOfPirates;
-	Pirate pirateArray[numberOfPirates];
-	for(int i=0; i<numberOfPirates; i++){
-		//variables for pirates
-		string name;
-		int pirateAge;
-		int pirateGold;
+	//set up a pirate
+	string name = "none";
+	int age = 0;
+	int gold =0;
 
-		cout << "Enter pirate " << i+1 <<  " name: " << endl;
-		cin  >> name;
-		cout << "Enter pirate " << i+1 << " age: " << endl;
-		cin  >> pirateAge;
-		cout << "Enter pirate " << i+1 << " gold: " << endl;
-		cin  >> pirateGold;
+	cout << "Name your pirate: " << endl;
+	cin >> name;
 
-		//These are all pass by value
-		pirateArray[i].setName(name);
-		pirateArray[i].setAge(pirateAge);
-		pirateArray[i].setGold(pirateGold);
+	//set age
+	cout << "How old is the pirate? " << endl;
+	cin >> age;
 
-	}
+	//set gold
+	cout << "How much gold does the pirate have?" << endl;
+	cin >> gold;
 
-	//pass by reference
-	ParrotNamingClass namer;
-	namer.theNamer(pirateArray, numberOfPirates);
+	//making pirate instance and pointer to pirate
+	Pirate myPirate(name, age, gold);
+	Pirate * piratePointer;
+	piratePointer = &myPirate;
 
-	//search for parrot of a pirate from pirateArray
-	string answer = "YES";
-	while(answer == "YES" || answer == "YAR" || answer == "Yes" || answer == "yes"){
+	//use pointer to chang pirate name
+	cout << "updated pirate name: " <<  endl;
+	cin >> name;
+	piratePointer->setName(name);
+	cout << &piratePointer << " " << piratePointer << " " << piratePointer->getPirateName() << endl << endl;
 
-		//print all pirates
-		cout << "Here is a list of all of the pirates: " << endl;
-		for(int i=0; i<numberOfPirates; i++){
-			cout << pirateArray[i].getPirateName() << endl;
+	int goldArray[] = {10,10,10,10,10};
+	for(int i=0;i<6;i++){
+		//create array pointer
+		int *arrayPointer;
+		arrayPointer = goldArray;
+
+		//for out of bounds run
+		if(i==6){
+			cout << "Out of Bounds run " << endl;
+			arrayPointer[i] += i;
+			cout << "should be 16 if [6] existed, but get: " << arrayPointer[i] << "at location: " << &arrayPointer[i];
+			cout << endl;
 		}
 
-		//ask which pirate to find parrot of
-		cout << "Which pirate's parrot would you like to find?" << endl;
-		string name;
-		cin >> name;
-
-		//find the parrot
-		for(int i=0; i<numberOfPirates; i++){
-			if(name == pirateArray[i].getPirateName()){
-
-				cout << name << "'s parrot is named " << pirateArray[i].getParrotName() << endl;
-				break;
-			}
-			else if(i == numberOfPirates-1){
-				cout << "That is not a name of a pirate!";
-			}
-		}
-
-		cout << "Would you like to know the name of another pirate's parrot?" << endl;
-		cin >> answer;
-
+		arrayPointer[i]+=i;
+		cout << "i=" << i << ". pointer location: " << &arrayPointer[i] << ". Result: " << arrayPointer[i];
+		cout << endl;
 	}
 
 
