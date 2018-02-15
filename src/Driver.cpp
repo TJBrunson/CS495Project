@@ -43,18 +43,20 @@ int main(int argc, char* argv[]){
 	for(int i=0;i<6;i++){
 		//create array pointer
 		int *arrayPointer;
+		int **pointerPointer;
 		arrayPointer = goldArray;
+		pointerPointer = &arrayPointer;
 
 		//for out of bounds run
 		if(i==6){
 			cout << "Out of Bounds run " << endl;
-			arrayPointer[i] += i;
-			cout << "should be 16 if [6] existed, but get: " << arrayPointer[i] << "at location: " << &arrayPointer[i];
+			pointerPointer[i] += i;
+			cout << "should be 16 if [6] existed, but get: " << arrayPointer[i] << "at location: " << &arrayPointer[i] << " Reference pointer: " << &pointerPointer;
 			cout << endl;
 		}
 
-		arrayPointer[i]+=i;
-		cout << "i=" << i << ". pointer location: " << &arrayPointer[i] << ". Result: " << arrayPointer[i];
+		pointerPointer[i]+=i;
+		cout << "i=" << i << ". pointer location: " << &arrayPointer[i] << ". Result: " << arrayPointer[i] << " Reference pointer: " << &pointerPointer;
 		cout << endl;
 	}
 
