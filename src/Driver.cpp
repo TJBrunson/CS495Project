@@ -33,7 +33,7 @@ int main(int argc, char* argv[]){
 	Pirate * piratePointer;
 	piratePointer = &myPirate;
 
-	//use pointer to chang pirate name
+	//use pointer to change pirate name
 	cout << "updated pirate name: " <<  endl;
 	cin >> name;
 	piratePointer->setName(name);
