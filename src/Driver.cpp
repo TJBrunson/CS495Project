@@ -10,7 +10,7 @@
 #include "../src/Pirate.h"
 #include "../src/ParrotNamingClass.h"
 
-int main(int argc, char* argv[]){
+int main(int argc, char** argv){
 
 	//set up a pirate
 	string name = "none";
@@ -50,12 +50,12 @@ int main(int argc, char* argv[]){
 		//for out of bounds run
 		if(i==6){
 			cout << "Out of Bounds run " << endl;
-			pointerPointer[i] += i;
+			(*pointerPointer)[i] += i;
 			cout << "should be 16 if [6] existed, but get: " << arrayPointer[i] << "at location: " << &arrayPointer[i] << " Reference pointer: " << &pointerPointer;
 			cout << endl;
 		}
 
-		pointerPointer[i]+=i;
+		(*pointerPointer)[i]+=i;
 		cout << "i=" << i << ". pointer location: " << &arrayPointer[i] << ". Result: " << arrayPointer[i] << " Reference pointer: " << &pointerPointer;
 		cout << endl;
 	}
